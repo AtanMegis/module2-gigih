@@ -1,0 +1,74 @@
+[1mdiff --git a/src/App.js b/src/App.js[m
+[1mindex 7441673..388ba31 100644[m
+[1m--- a/src/App.js[m
+[1m+++ b/src/App.js[m
+[36m@@ -1,25 +1,16 @@[m
+[31m-import logo from './logo.svg';[m
+ import './App.css';[m
+ import React, { Component }  from 'react';[m
+[32m+[m[32mimport SearchBar from './Feature/SearchBar';[m
+[32m+[m[32mimport ContainerSong from './Feature/Song';[m
+ [m
+ function App() {[m
+   return ([m
+     <div className="App">[m
+[31m-      <header className="App-header">[m
+[31m-        <img src={logo} className="App-logo" alt="logo" />[m
+[31m-        <p>[m
+[31m-          Edit <code>src/App.js</code> and save to reload.[m
+[31m-        </p>[m
+[31m-        <a[m
+[31m-          className="App-link"[m
+[31m-          href="https://reactjs.org"[m
+[31m-          target="_blank"[m
+[31m-          rel="noopener noreferrer"[m
+[31m-        >[m
+[31m-          Learn React[m
+[31m-        </a>[m
+[31m-      </header>[m
+[32m+[m[32m      <SearchBar/>[m
+[32m+[m[32m      <ContainerSong/>[m
+[32m+[m[32m      <button class="btnSelect">Select</button>[m
+     </div>[m
+[32m+[m
+   );[m
+ }[m
+ [m
+[1mdiff --git a/src/index.css b/src/index.css[m
+[1mindex ec2585e..08790ba 100644[m
+[1m--- a/src/index.css[m
+[1m+++ b/src/index.css[m
+[36m@@ -11,3 +11,7 @@[m [mcode {[m
+   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',[m
+     monospace;[m
+ }[m
+[32m+[m
+[32m+[m[32mbutton {[m
+[32m+[m[32m  margin-top: 20px;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/src/index.js b/src/index.js[m
+[1mindex ef2edf8..e536d7c 100644[m
+[1m--- a/src/index.js[m
+[1m+++ b/src/index.js[m
+[36m@@ -1,17 +1,12 @@[m
+ import React from 'react';[m
+ import ReactDOM from 'react-dom';[m
+ import './index.css';[m
+[32m+[m
+ import App from './App';[m
+[31m-import reportWebVitals from './reportWebVitals';[m
+ [m
+ ReactDOM.render([m
+   <React.StrictMode>[m
+     <App />[m
+   </React.StrictMode>,[m
+   document.getElementById('root')[m
+[31m-);[m
+[31m-[m
+[31m-// If you want to start measuring performance in your app, pass a function[m
+[31m-// to log results (for example: reportWebVitals(console.log))[m
+[31m-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals[m
+[31m-reportWebVitals();[m
+[32m+[m[32m);[m
+\ No newline at end of file[m
