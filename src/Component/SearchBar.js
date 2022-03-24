@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 
+
 const SearchBar = () => {
     return(
         <form action="/search">

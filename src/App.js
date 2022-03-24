@@ -1,15 +1,11 @@
 import './App.css';
 import React, { Component }  from 'react';
-import SearchBar from './Feature/SearchBar';
-import ContainerSong from './Feature/Song';
-
+import BigData from './Page/BigData';
 
 function App() {
   return (
     <div className="App">
-      <SearchBar/>
-      <ContainerSong/>
-      <button class="btnSelect">Select</button>
+    <BigData/>
     </div>
   );
 }

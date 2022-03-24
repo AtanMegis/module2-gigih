@@ -17,12 +17,19 @@ button {
   margin-top: 50px;
   font:bold;
   margin-bottom: 20px;
+  width: 100px;
 }
 
 p {
   color:blue;
 }
 
+
 label {
   color:blue;
+}
+
+.select{
+  width: 150px;
+  height: 30px;
 }
