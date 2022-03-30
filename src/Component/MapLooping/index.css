@@ -1,4 +1,28 @@
 .container__songs {
-    background-color: black;
-    
+    background-color:greenyellow;
+    display:-ms-flexbox;
+}
+
+.img-song {
+    display:flex;
+    margin-top: 20px;
+    margin-right: 40px;
+    height: 120px;
+    width: 75px;
+}
+
+
+.btn--song {
+    color: red;
+    background-color: lightblue;
+    border-radius:  10px;
+}
+
+.title {
+    text-align:center;
+    margin-right: 40px;
+}
+
+.nameBands {
+    margin-left: 20px;
 }
