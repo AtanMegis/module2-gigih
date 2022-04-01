@@ -6,6 +6,7 @@ import SearchBar from './Component/SearchBar';
 import LoopedSong from './Component/MapLooping';
 import data from './Component/MapLooping/SongData';
 import Home from './Page/Home';
+import Homey from './Page/TestHome';
 
 function App() {
   return (

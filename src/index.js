@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Home from './Page/Home';
+import Homey from './Page/TestHome';
 
 ReactDOM.render(
   <React.StrictMode>
