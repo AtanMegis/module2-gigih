@@ -74,9 +74,13 @@ import PropTypes from 'prop-types';
 import Button from './Button/Button';
 
 
-export default function TrackWrapper({ imageUrl, title, artist, toggleSelect }) {
+// export default function TrackWrapper({ imageUrl, title, artist, toggleSelect }) {
 
-  const [isSelected, setIsSelected] = useState(false);
+//   const [isSelected, setIsSelected] = useState(false);
+
+export default function TrackWrapper({ imageUrl, title, artist, select, toggleSelect }) {
+
+  const [isSelected, setIsSelected] = useState(select);
 
   const handleToggleSelect = () => {
     setIsSelected(!isSelected);
@@ -95,11 +99,11 @@ export default function TrackWrapper({ imageUrl, title, artist, toggleSelect }) 
         </div>
 
         <div className="card__action">
-        <Button variant={isSelected ? 'primary' : 'secondary'} onClick={handleToggleSelect}>{isSelected ? 'Deselect' : 'Select'}</Button>
+          <Button variant={isSelected ? 'primary' : 'secondary'} onClick={handleToggleSelect}>{isSelected ? 'Deselect' : 'Select'}</Button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 }
 
 TrackWrapper.propTypes = {

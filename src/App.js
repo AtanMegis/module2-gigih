@@ -7,11 +7,13 @@ import LoopedSong from './Component/MapLooping';
 import data from './Component/MapLooping/SongData';
 import Home from './Page/Home';
 import Homey from './Page/TestHome';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div className="App">
     <Home/>
+    <ToastContainer/>
     </div>
   );
 }
