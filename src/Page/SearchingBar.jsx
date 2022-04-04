@@ -4,10 +4,11 @@ import Button from "./Button/Button";
 import Input from "../Component/InputPlaylist/Input";
 import { toast } from 'react-toastify';
 import { searchTrack } from "../lib/fetchApi";
+import { useSelector } from 'react-redux';
 
 
-
-export default function SearchingBar({ accessToken, onSuccess, onClearSearch }) {
+export default function SearchingBar({  onSuccess, onClearSearch }) {
+    const accessToken = useSelector((state) => state.auth.accessToken);
     const [text, setText] = useState('');
     const [isClear, setIsClear] = useState(true);
 

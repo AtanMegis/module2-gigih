@@ -77,17 +77,22 @@ import Button from './Button/Button';
 import CreatePlaylistForm from './Playlist/Form';
 import { getUserProfile } from '../lib/fetchApi';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../reducer/authReducer';
 
 
 export default function Home() {
 
-    const [accessToken, setAccessToken] = useState('');
-    const [isAuthorize, setIsAuthorize] = useState(false);
+    // const [accessToken, setAccessToken] = useState('');
+    // const [isAuthorize, setIsAuthorize] = useState(false);
     const [tracks, setTracks] = useState([]);
     const [selectedTracksUri, setSelectedTracksUri] = useState([]);
     const [selectedTracks, setSelectedTracks] = useState([]);
     const [isInSearch, setIsInSearch] = useState(false);
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
+    const isAuthorize = useSelector((state) => state.auth.isAuthorize);
+    const dispatch = useDispatch();
+
 
 
     useEffect(() => {
@@ -97,8 +102,9 @@ export default function Home() {
         // setIsAuthorize(accessToken !== null);
 
         if (accessTokenParams !== null) {
-            setAccessToken(accessTokenParams);
-            setIsAuthorize(accessTokenParams !== null);
+            dispatch(login(accessTokenParams))
+            // setAccessToken(accessTokenParams);
+            // setIsAuthorize(accessTokenParams !== null);
         }
 
         const setUserProfile = async () => {
@@ -173,14 +179,14 @@ export default function Home() {
             {isAuthorize && (
                 <main className="container" id="home">
                     <CreatePlaylistForm
-                        accessToken={accessToken}
+                        // accessToken={accessToken}
                         userId={user.id}
                         uriTracks={selectedTracksUri}
                     />
 
                     <hr />
                     <SearchingBar
-                        accessToken={accessToken}
+                        // accessToken={accessToken}
                         // onSuccess={(tracks) => onSuccessSearch(tracks)}
                         onSuccess={onSuccessSearch}
                         onClearSearch={clearSearch}
@@ -189,7 +195,7 @@ export default function Home() {
                         {tracks.length === 0 && (
                             <p>No tracks</p>
                         )}
-                        
+
                         <div className="tracks">
                             {tracks.map((track) => (
                                 <TrackWrapper

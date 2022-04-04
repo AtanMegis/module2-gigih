@@ -4,10 +4,13 @@ import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
 import Button from '../Button/Button';
 import Input from '../../Component/InputPlaylist/Input';
 import InputGroup from '../../Component/InputPlaylist/InputGroup';
+import { useSelector } from 'react-redux';
 
 
 
-export default function CreatePlaylistForm({ accessToken, userId, uriTracks }) {
+export default function CreatePlaylistForm({ userId, uriTracks }) {
+    const accessToken = useSelector((state) => state.auth.accessToken);
+
     const [form, setForm] = useState({
         title: '',
         description: '',
