@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
 import Button from '../Button/Button';
 import Input from '../InputPlaylist/Input';
