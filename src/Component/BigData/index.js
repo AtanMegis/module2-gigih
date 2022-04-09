@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import ContainerSong from "../../Component/Song";
+import ContainerSong from "./Song";
 import SearchBar from "../../Component/SearchBar";
 
 

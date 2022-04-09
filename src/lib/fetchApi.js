@@ -9,8 +9,8 @@ export const searchTrack = async (query, accessToken) => {
     },
   };
 
-  const response = await axios.get(`${config.SPOTIFY_BASE_URL}/search?type=track&q=${query}`, requestOptions);
-
+  const endPoint = `${config.SPOTIFY_BASE_URL}/search?type=track&q=${query}`;
+  const response = await axios.get(endPoint, requestOptions);
   return response.data;
 }
 
@@ -22,7 +22,8 @@ export const getUserProfile = async (accessToken) => {
     },
   };
 
-  const response = await axios.get(`${config.SPOTIFY_BASE_URL}/me`, requestOptions);
+  const endPoint = `${config.SPOTIFY_BASE_URL}/me`;
+  const response = await axios.get(endPoint, requestOptions);
 
   return response.data;
 }
@@ -33,8 +34,9 @@ export const createPlaylist = async (accessToken, userId, { name, description })
     description,
     public: false,
     collaborative: false,
-  })
 
+  });
+  
   const requestOptions = {
     headers: {
       'Authorization': 'Bearer ' + accessToken,
@@ -42,16 +44,15 @@ export const createPlaylist = async (accessToken, userId, { name, description })
     },
   };
 
-  const response = await axios.post(
-    `${config.SPOTIFY_BASE_URL}/users/${userId}/playlists`,
-    data,
-    requestOptions
-  );
+  const endPoint = `${config.SPOTIFY_BASE_URL}/users/${userId}/playlists`;
+  const response = await axios.post(endPoint, data, requestOptions);
 
   return response.data;
 }
 
 export const addTracksToPlaylist = async (accessToken, playlistId, uris) => {
+  console.log('playlistId = ', playlistId)
+  console.log('uris = ', uris)
   const data = JSON.stringify({
     uris
   });
@@ -63,11 +64,8 @@ export const addTracksToPlaylist = async (accessToken, playlistId, uris) => {
     },
   };
 
-  const response = await axios.post(
-    `${config.SPOTIFY_BASE_URL}/playlists/${playlistId}/tracks`,
-    data,
-    requestOptions
-  );
+  const endPoint = `${config.SPOTIFY_BASE_URL}/playlists/${playlistId}/tracks`;
+  const response = await axios.post(endPoint, data, requestOptions);
 
   return response.data;
 }

@@ -1,52 +1,61 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Input({ label, id, onChange, type, error, value, required, className, ...props }) {
+function ElementInput({ type, ...props }) {
+  if (type === 'textarea') {
+    return <textarea {...props} />
+  }
 
-    const classInput = ['input'];
-    if (className) {
-        classInput.push(className);
-    }
-
-    if (error) {
-        classInput.push('input--error');
-    }
-
-    let elementInput = (
-        <input
-            type={type}
-            id={id}
-            onChange={onChange}
-            required={required}
-            className={classInput.join('')}
-            value={value}
-            {...props}
-        />
-    )
-
-    if (type === 'textArea') {
-        classInput.push('inpuet--large');
-        elementInput = (
-            <textarea
-                id={id}
-                className={classInput.join('')}
-                onChange={onchange}
-                value={value}
-                required={required}
-                {...props}
-            />
-        )
-    }
-
-    return (
-        <>
-            {label && <label htmlFor="id">
-                {label}{required && <span>*</span>}
-            </label>}
-
-            {elementInput}
-
-            {error && <span className="input-group__error">{error}</span>}
-
-        </>
-    )
+  return <input type={type} {...props} />
 }
+
+export default function Input({ label, id, required, type, error, className, ...props }) {
+  const classInput = ['input'];
+
+  if (type === 'textarea') {
+    classInput.push('input--large');
+  }
+
+  if (className) {
+    classInput.push(className);
+  }
+
+  if (error) {
+    classInput.push('input--error');
+  }
+
+  return (
+    <div>
+      {label && <label htmlFor={id}>{label}{required && <span>*</span>}</label>}
+      
+      <ElementInput
+        type={type}
+        id={id}
+        className={classInput.join(' ')}
+        required={required}
+        {...props}
+      />
+
+      {error && <span className="input-group__error">{error}</span>}
+    </div>
+  )
+}
+
+Input.defaultProps = {
+  label: null,
+  type: 'text',
+  error: null,
+  required: false,
+  className: '',
+};
+
+Input.propTypes = {
+  label: PropTypes.string,
+  id: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  error: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  required: PropTypes.bool,
+  className: PropTypes.string,
+};
