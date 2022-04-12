@@ -1,0 +1,6 @@
+.navbarMenu {
+    display: flex;
+    justify-content: flex-start;
+    color: red;
+    align-items: center;
+} 

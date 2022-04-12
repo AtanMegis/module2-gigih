@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
 import Button from '../Button/Button';
-import Input from '../InputPlaylist/Input';
-import InputGroup from '../InputPlaylist/InputGroup';
+import Input from '../Input/Input';
+import InputGroup from '../InputGroup/InputGroup';
 import PropTypes from 'prop-types';
 import { logout } from '../../slice/authSlice';
-
+import styles from './form.module.css'
 
 export default function CreatePlaylistForm({ uriTracks }) {
     const accessToken = useSelector((state) => state.auth.accessToken);
@@ -68,7 +68,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
             });
             
             await addTracksToPlaylist(accessToken, responseCreatePlaylist.id, uriTracks);
-            console.log("sebelu toast")
+            console.log("sebelum toast")
             toast.success('Playlist created successfully', {
                 position: "top-right",
                 autoClose: 5000,
@@ -95,7 +95,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
     }
     
     return (
-      <div className="create-playlist-form">
+      <div className={styles['create-playlist-form']}>
         <div>
           <h2>Create Playlist</h2>
           <form className="form form-playlist" onSubmit={handleSubmit}>

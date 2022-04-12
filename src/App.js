@@ -1,12 +1,12 @@
 import { useLocation, Switch, Route } from "react-router-dom";
-import Auth from "./Page/Auth";
+import Auth from "./Page/Auth/Auth";
 import GuardRoute from "./Component/GuardRoute";
-import NotFound from "./Page/NotFound";
+import NotFound from "./Page/NotFound/NotFound";
 import { useEffect } from "react";
 import { useDispatch, useSelector} from 'react-redux'
 import { login, logout } from "./slice/authSlice";
 import React from "react";
-import Home from "./Page/Home";
+import Home from "./Page/Home/Home";
 
 
 function App() {

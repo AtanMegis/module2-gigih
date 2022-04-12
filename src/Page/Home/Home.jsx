@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from 'react';
-import SearchingBar from '../Component/SearchBar/SearchingBar';
-import CreatePlaylistForm from '../Component/CreatePlaylist/Form';
-import TrackWrapper from '../Component/Tracks/index';
-import Layout from '../Component/Layout';
-import { useDocumentTitle } from '../lib/customHooks';
+import SearchingBar from '../../Component/SearchBar/SearchingBar';
+import CreatePlaylistForm from '../../Component/CreatePlaylist/Form';
+import TrackWrapper from '../../Component/Tracks/index';
+import Layout from '../../Component/Layout';
+import { useDocumentTitle } from '../../lib/customHooks';
 import { ToastContainer } from 'react-toastify';
-
+import styles from './home.module.css';
 
 
 export default function Home() {
@@ -70,12 +70,12 @@ export default function Home() {
             onClearSearch={clearSearch}
           />
   
-          <div className="content">
+          <div className="">
             {tracks.length === 0 && (
               <p>{message}</p>
             )}
   
-            <div className="tracks">
+            <div className={styles.tracks}>
               {tracks.map((track) => (
                 <TrackWrapper
                   key={track.id}

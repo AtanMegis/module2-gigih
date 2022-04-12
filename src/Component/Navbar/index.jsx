@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../slice/authSlice';
 import Button from '../Button/Button';
 import Logo from '../Logo';
+import styles from './navbar.module.css';
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export default function Navbar() {
       <div className="container navbar__nav">
         <Logo />
 
-        <div className="navbar__menu">
+        <div className={styles.navbarMenu}>
           <Button onClick={() => dispatch(logout())}>Logout</Button>
         </div>
       </div>

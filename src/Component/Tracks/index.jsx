@@ -13,7 +13,7 @@ export default function TrackWrapper({ imageUrl, title, artist, select, toggleSe
   return (
     <div className="card">
       <div className="card__image">
-        <img src={imageUrl} alt={title} />
+        <img width={'100%'} src={imageUrl} alt={title} />
       </div>
 
       <div className="card__data">

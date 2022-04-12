@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './input.module.css';
 
 function ElementInput({ type, ...props }) {
   if (type === 'textarea') {
@@ -25,7 +26,7 @@ export default function Input({ label, id, required, type, error, className, ...
   }
 
   return (
-    <div>
+    <div className={styles['input-wrapper']}>
       {label && <label htmlFor={id}>{label}{required && <span>*</span>}</label>}
       
       <ElementInput

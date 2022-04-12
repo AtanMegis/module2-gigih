@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import Button from "../Button/Button";
-import Input from "../InputPlaylist/Input";
+import Input from "../Input/Input";
 import { toast } from 'react-toastify';
 import { searchTrack } from "../../lib/fetchApi";
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "../../slice/authSlice";
+import styles from "./searchingbar.module.css";
 
 export default function SearchingBar({ onSuccess, onClearSearch }) {
     const accessToken = useSelector((state) => state.auth.accessToken);
@@ -43,7 +44,7 @@ export default function SearchingBar({ onSuccess, onClearSearch }) {
     }
   
     return (
-      <div>
+      <div className={styles['SearchBar-wrapper']}>
         <form className="form-search" onSubmit={handleSubmit}>
           <Input
             type="text"
