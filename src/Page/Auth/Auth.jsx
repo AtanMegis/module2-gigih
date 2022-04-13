@@ -7,7 +7,7 @@ import config from '../../lib/config';
 import { login } from '../../slice/authSlice';
 import { getUserProfile } from '../../lib/fetchApi';
 import { useDocumentTitle } from '../../lib/customHooks';
- 
+import styles from './auth.module.css';
 
 export default function Auth() {
     const dispatch = useDispatch();
@@ -52,7 +52,7 @@ export default function Auth() {
     }
   
     return (
-      <main className="center">
+      <main className={styles.center}>
         <p>Login for next step...</p>
         <Button href={getSpotifyLinkAuthorize()} external>Authorize</Button>
       </main>

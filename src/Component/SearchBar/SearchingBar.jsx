@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "../../slice/authSlice";
 import styles from "./searchingbar.module.css";
 
+
 export default function SearchingBar({ onSuccess, onClearSearch }) {
     const accessToken = useSelector((state) => state.auth.accessToken);
     const [text, setText] = useState('');

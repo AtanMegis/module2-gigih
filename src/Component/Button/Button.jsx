@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import styles from './button.module.css'
+import { Button } from '@mui/material'
 
-export default function Button({ children, type, variant, className, onClick, href, external, ...props }) {
+export default function Buttons({ children, type, variant, className, onClick, href, external, ...props }) {
     const classButton = ['btn'];
   
     if (variant !== 'primary') {
@@ -41,14 +42,14 @@ export default function Button({ children, type, variant, className, onClick, hr
     }
   
     return (
-      <button
+      <Button
         type={type}
         className={styles.lalala}
         onClick={onClick}
         {...props}
       >
         {children}
-      </button>
+      </Button>
     )
   }
   

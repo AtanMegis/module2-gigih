@@ -1,10 +1,12 @@
+
 import React from 'react';
-import styles from './logo.module.css'; 
+import styles from './logo.module.css';
+
 
 export default function Logo() {
   return (
-    <div className={styles.logo}>
-      <p>Spotipy.</p>
+    <div  className={styles.logo}>
+      <p className={styles.spotipy}>Spotipy.</p>
     </div>
   )
 }

@@ -14,7 +14,7 @@ export default function Navbar() {
         <Logo />
 
         <div className={styles.navbarMenu}>
-          <Button onClick={() => dispatch(logout())}>Logout</Button>
+          <Button size="small" onClick={() => dispatch(logout())}>Logout</Button>
         </div>
       </div>
     </nav>

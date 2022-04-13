@@ -1,5 +1,11 @@
 .logo {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: flex-end;
+    font-size: 24px; 
+}
+
+.spotipy {
+    color: orangered;
+    margin-bottom: -20px;
 }

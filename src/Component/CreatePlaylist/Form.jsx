@@ -8,6 +8,7 @@ import InputGroup from '../InputGroup/InputGroup';
 import PropTypes from 'prop-types';
 import { logout } from '../../slice/authSlice';
 import styles from './form.module.css'
+import { TextFields } from '@mui/icons-material';
 
 export default function CreatePlaylistForm({ uriTracks }) {
     const accessToken = useSelector((state) => state.auth.accessToken);
@@ -99,18 +100,19 @@ export default function CreatePlaylistForm({ uriTracks }) {
         <div>
           <h2>Create Playlist</h2>
           <form className="form form-playlist" onSubmit={handleSubmit}>
-            <InputGroup>
-              <Input
-                label="Title"
-                placeholder="Title of playlist"
-                value={form.title}
-                id="title-playlist"
-                name="title"
-                onChange={handleChange}
-                error={errorForm.title}
-                required
-              />
-            </InputGroup>
+         
+          <InputGroup>
+          <Input
+            label="Title"
+            placeholder="Title of playlist"
+            value={form.title}
+            id="title-playlist"
+            name="title"
+            onChange={handleChange}
+            error={errorForm.title}
+            required
+          />
+        </InputGroup>
             <InputGroup>
               <Input
                 type='textarea'
