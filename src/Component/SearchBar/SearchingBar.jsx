@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
-import Button from "../Button/Button";
 import Input from "../Input/Input";
 import { toast } from 'react-toastify';
 import { searchTrack } from "../../lib/fetchApi";
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "../../slice/authSlice";
 import styles from "./searchingbar.module.css";
+import { Buttons } from "../Button/Button"
 
 
 export default function SearchingBar({ onSuccess, onClearSearch }) {
@@ -55,11 +55,11 @@ export default function SearchingBar({ onSuccess, onClearSearch }) {
             value={text}
             onChange={handleInput}
           />
-          <Button type="submit">Search</Button>
+          <Buttons type="submit">Search</Buttons>
         </form>
   
         {!isClear && (
-          <Button variant="text" onClick={handleClear} className="mt-1">Clear search</Button>
+          <Buttons variant="text" onClick={handleClear} className="mt-1">Clear search</Buttons>
         )}
       </div>
     )

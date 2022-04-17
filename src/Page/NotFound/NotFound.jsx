@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../Component/Button/Button';
+import { Buttons } from "../../Component/Button/Button"
 import { useDocumentTitle } from '../../lib/customHooks';
 
 export default function NotFound() {
@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <main className="center">
       No Content Here...
-      <Button href="/create-playlist">Go To Content</Button>
+      <Buttons href="/create-playlist">Go To Content</Buttons>
     </main>
   )
 }

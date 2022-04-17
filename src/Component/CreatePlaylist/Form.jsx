@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addTracksToPlaylist, createPlaylist } from '../../lib/fetchApi';
-import Button from '../Button/Button';
 import Input from '../Input/Input';
 import InputGroup from '../InputGroup/InputGroup';
 import PropTypes from 'prop-types';
 import { logout } from '../../slice/authSlice';
 import styles from './form.module.css'
 import { TextFields } from '@mui/icons-material';
+import { Buttons } from '../Button/Button';
 
 export default function CreatePlaylistForm({ uriTracks }) {
     const accessToken = useSelector((state) => state.auth.accessToken);
@@ -128,7 +128,7 @@ export default function CreatePlaylistForm({ uriTracks }) {
             </InputGroup>
   
             <div className="form-playlist__action">
-              <Button type="submit">Create</Button>
+              <Buttons type="submit">Create</Buttons>
             </div>
           </form>
         </div>

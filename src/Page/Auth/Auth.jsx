@@ -2,12 +2,13 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Button from '../../Component/Button/Button';
+import { Buttons } from '../../Component/Button/Button'
 import config from '../../lib/config';
 import { login } from '../../slice/authSlice';
 import { getUserProfile } from '../../lib/fetchApi';
 import { useDocumentTitle } from '../../lib/customHooks';
 import styles from './auth.module.css';
+
 
 export default function Auth() {
     const dispatch = useDispatch();
@@ -54,7 +55,7 @@ export default function Auth() {
     return (
       <main className={styles.center}>
         <p>Login for next step...</p>
-        <Button href={getSpotifyLinkAuthorize()} external>Authorize</Button>
+        <Buttons links={getSpotifyLinkAuthorize()} isExternal>Authorize</Buttons>
       </main>
     )
   }

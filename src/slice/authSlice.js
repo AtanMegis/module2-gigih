@@ -22,6 +22,7 @@ export const authSlice = createSlice({
       state.isAuthorized = false;
       state.user = {};
 
+      console.log("zzzzzzzz")
       localStorage.removeItem('accessToken');
       localStorage.removeItem('expiredDate');
       localStorage.removeItem('user');

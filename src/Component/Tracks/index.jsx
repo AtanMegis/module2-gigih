@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button/Button';
+import { Buttons } from '../Button/Button';
 import { Box } from '@mui/material';
 import { Grid } from '@mui/material';
 
@@ -33,12 +33,12 @@ export default function TrackWrapper({ imageUrl, title, artist, select, toggleSe
       </div>
       
       <div className="card__action">
-        <Button
+        <Buttons
           variant={isSelected ? 'primary' : 'secondary'}
           onClick={handleToggleSelect}
         >
           {isSelected ? 'Deselect' : 'Select'}
-        </Button>
+        </Buttons>
       </div>
     </div>
   </div>

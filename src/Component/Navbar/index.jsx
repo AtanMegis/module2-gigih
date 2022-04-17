@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../slice/authSlice';
-import Button from '../Button/Button';
+import { Buttons } from '../Button/Button';
 import Logo from '../Logo';
 import styles from './navbar.module.css';
 
@@ -14,7 +14,7 @@ export default function Navbar() {
         <Logo />
 
         <div className={styles.navbarMenu}>
-          <Button size="small" onClick={() => dispatch(logout())}>Logout</Button>
+          <Buttons size="small" onClick={() => dispatch(logout())}>Logout</Buttons>
         </div>
       </div>
     </nav>
