@@ -3,16 +3,22 @@ import Auth from "./Page/Auth/Auth";
 import GuardRoute from "./Component/GuardRoute";
 import NotFound from "./Page/NotFound/NotFound";
 import { useEffect } from "react";
-import { useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { login, logout } from "./slice/authSlice";
 import React from "react";
 import Home from "./Page/Home/Home";
 
 
 function App() {
-  const location = useLocation();
+  // const location = useLocation();
+  const LocationDisplay = () => {
+    const location = useLocation()
+
+    return <div data-testid="location-display">{location.pathname}</div>
+  }
   const dispatch = useDispatch();
   const accessTokenState = useSelector((state) => state.auth.accessToken);
+
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
@@ -28,12 +34,15 @@ function App() {
           accessToken,
           user,
           expiredDate,
-          }));
+        }));
       }
     }
-  }, [accessTokenState, dispatch, location.pathname]);
+  }, [accessTokenState, dispatch, LocationDisplay.pathname]);
+
+
 
   return (
+    <>
     <Switch>
       <GuardRoute path="/create-playlist" type="private" exact>
         <Home />
@@ -45,6 +54,7 @@ function App() {
         <NotFound />
       </Route>
     </Switch>
+    </>
   );
 }
 

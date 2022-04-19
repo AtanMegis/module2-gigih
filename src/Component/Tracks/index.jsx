@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Buttons } from '../Button/Button';
-import { Box } from '@mui/material';
-import { Grid } from '@mui/material';
+
+
 
 
 // export default function TrackWrapper({ imageUrl, title, artist, select, toggleSelect }) {
@@ -22,7 +22,7 @@ export default function TrackWrapper({ imageUrl, title, artist, select, toggleSe
   }
   return (
     <div className="card">
-    <div className="card__image">
+    <div className="card__image" data-testid="SearchTrackwrapper">
       <img width={'100%'} src={imageUrl} alt={title} />
     </div>
 

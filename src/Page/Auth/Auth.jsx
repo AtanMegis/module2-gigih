@@ -10,6 +10,7 @@ import { useDocumentTitle } from '../../lib/customHooks';
 import styles from './auth.module.css';
 
 
+
 export default function Auth() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -55,7 +56,9 @@ export default function Auth() {
     return (
       <main className={styles.center}>
         <p>Login for next step...</p>
-        <Buttons links={getSpotifyLinkAuthorize()} isExternal>Authorize</Buttons>
+        <Buttons links={getSpotifyLinkAuthorize()} eksternal>Authorize</Buttons>
       </main>
     )
   }
+
+  

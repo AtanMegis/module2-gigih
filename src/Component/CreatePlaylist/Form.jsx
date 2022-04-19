@@ -7,7 +7,6 @@ import InputGroup from '../InputGroup/InputGroup';
 import PropTypes from 'prop-types';
 import { logout } from '../../slice/authSlice';
 import styles from './form.module.css'
-import { TextFields } from '@mui/icons-material';
 import { Buttons } from '../Button/Button';
 
 export default function CreatePlaylistForm({ uriTracks }) {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import styles from './button.module.css'
 import { Button } from '@mui/material'
+import { __String } from 'typescript'
 
 
 // type Props = {
@@ -15,7 +16,8 @@ import { Button } from '@mui/material'
 //   external: boolean ,
   
 // }
-export const Buttons: React.FC<{ children: any, tipe: string , variant: string , class : string, clickHandler: MouseEventHandler, links : string, isExternal : boolean}> = ( props ) =>   {
+export const Buttons: React.FC<{ children: any, tipe: string , variant: string , class : string,
+   clickHandler: MouseEventHandler, links : string, eksternal : string | undefined}> = ( props ) =>   {
     const classButton = ['btn'];
 
     if (props.variant !== 'primary') {
@@ -29,7 +31,7 @@ export const Buttons: React.FC<{ children: any, tipe: string , variant: string ,
     if (props.links) {
       classButton.push('btn--link');
       
-      if (props.isExternal) {
+      if (props.eksternal) {
         return (
           <a
             href={props.links}
@@ -42,6 +44,7 @@ export const Buttons: React.FC<{ children: any, tipe: string , variant: string ,
       }
       
       return (
+        
         <Link
           to={props.links}
           className={classButton.join(' ')}
@@ -49,6 +52,7 @@ export const Buttons: React.FC<{ children: any, tipe: string , variant: string ,
         >
           {props.children}
         </Link>
+        
       )
     }
   
