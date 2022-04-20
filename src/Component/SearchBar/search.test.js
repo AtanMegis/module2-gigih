@@ -16,8 +16,8 @@ const requestOptions = {
 
 const server = setupServer(
     rest.get(
-        `${config.SPOTIFY_BASE_URL}/search?type=track&q`,
-        requestOptions, (req, res, ctx) => {
+        `${config.SPOTIFY_BASE_URL}/search`,
+        requestOptions, (_req, res, ctx) => {
             return res(
                 ctx.status(200)
             )

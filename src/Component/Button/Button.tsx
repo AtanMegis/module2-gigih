@@ -1,9 +1,7 @@
 import React, { MouseEventHandler } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import styles from './button.module.css'
-import { Button } from '@mui/material'
-import { __String } from 'typescript'
+
+
 
 
 // type Props = {
@@ -17,7 +15,7 @@ import { __String } from 'typescript'
   
 // }
 export const Buttons: React.FC<{ children: any, tipe: string , variant: string , class : string,
-   clickHandler: MouseEventHandler, links : string, eksternal : string | undefined}> = ( props ) =>   {
+   clickHandler: MouseEventHandler, links : string, eksternal : "true"}> = ( props ) =>   {
     const classButton = ['btn'];
 
     if (props.variant !== 'primary') {
@@ -59,7 +57,6 @@ export const Buttons: React.FC<{ children: any, tipe: string , variant: string ,
     return (
       <button
         // type={props.tipe}
-        className={styles.lalala}
       onClick={props.clickHandler}
       {...props}
       >

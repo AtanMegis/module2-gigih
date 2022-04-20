@@ -44,11 +44,13 @@ export default function Auth() {
     const getSpotifyLinkAuthorize = () => {
       const state = Date.now().toString();
       const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-  
+      
+      const namehost = window.location.protocol + '//' + window.location.host
+      
       return 'https://accounts.spotify.com/authorize?' +
         `client_id=${clientId}` +
         '&response_type=token' +
-        '&redirect_uri=http://localhost:3000' +
+        `&redirect_uri=${namehost}` +
         `&state=${state}` +
         `&scope=${config.SPOTIFY_SCOPE}`;
     }
