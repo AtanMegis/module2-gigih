@@ -14,38 +14,44 @@ import { Link } from 'react-router-dom'
 //   external: boolean ,
   
 // }
+
+
 export const Buttons: React.FC<{ children: any, tipe: string , variant: string , class : string,
-   clickHandler: MouseEventHandler, links : string, eksternal : "true"}> = ( props ) =>   {
+   clickHandler: MouseEventHandler, links : string, eksternal ?:  boolean | string}> = ( props ) =>   {
     const classButton = ['btn'];
+    console.log(classButton);
 
     if (props.variant !== 'primary') {
-      classButton.push(`btn--${props.variant}`);
+      // classButton.push(`btn--${props.variant}`);
     }
   
     if (props.class !== '') {
-    classButton.push(props.class);
+    // classButton.push(props.class);
     }
     
-    if (props.links) {
-      classButton.push('btn--link');
+    if (props.eksternal) {
+      // classButton.push('btn--link');
       
-      if (props.eksternal) {
-        return (
-          <a
-            href={props.links}
-            className={classButton.join(' ')}
-            {...props}
-          >
-            {props.children}
-          </a>
-        )
-      }
+      return (
+        <a
+          href={props.links}
+          // className={classButton.join(' ')}
+          {...props}
+        >
+          {props.children}
+        </a>
+      )
+    }
+
+    if (props.links) {
+      // classButton.push('btn--link');
+      
       
       return (
         
         <Link
           to={props.links}
-          className={classButton.join(' ')}
+          // className={classButton.join(' ')}
           {...props}
         >
           {props.children}
