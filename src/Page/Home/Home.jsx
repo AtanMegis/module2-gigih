@@ -6,7 +6,7 @@ import Layout from '../../Component/Layout';
 import { useDocumentTitle } from '../../lib/customHooks';
 import { ToastContainer } from 'react-toastify';
 import styles from './home.module.css';
-
+import msToTime from '../../lib/msToTime';
 
 export default function Home() {
     const [tracks, setTracks] = useState([]);
@@ -84,6 +84,7 @@ export default function Home() {
                   artist={track.artists[0].name}
                   select={selectedTracksUri.includes(track.uri)}
                   toggleSelect={() => toggleSelect(track)}
+                  duration={track.duration_ms}
                 />
               ))}
             </div>

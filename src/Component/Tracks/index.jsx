@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Buttons } from '../Button/Button';
+import msToTime from '../../lib/msToTime';
 
 
 
@@ -13,7 +14,7 @@ import { Buttons } from '../Button/Button';
 //     toggleSelect();
 //   }
 
-export default function TrackWrapper({ imageUrl, title, artist, select, toggleSelect }) {
+export default function TrackWrapper({ imageUrl, title, artist, select, toggleSelect, duration }) {
   const [isSelected, setIsSelected] = useState(select);
 
   const handleToggleSelect = () => {
@@ -30,6 +31,7 @@ export default function TrackWrapper({ imageUrl, title, artist, select, toggleSe
       <div className="card__content">
         <h3 className="card__title">{title}</h3>
         <p className="card__artist">{artist}</p>
+        <p className='card__duration'>{msToTime(duration)} </p>
       </div>
       
       <div className="card__action">
