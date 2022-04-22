@@ -1,3 +1,20 @@
+# Name Project
+Spotipy App
+
+# Features
+Login / Logout Authorize,
+Search Song,
+Select / Deselect Song,
+Clear Tracks,
+Create Playlist.
+
+# How To install
+Clone Github (https://github.com/AtanMegis/module2-gigih),
+Create .env.local,
+Run $npm install on your terminal,
+Open (http://localhost:3000).
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

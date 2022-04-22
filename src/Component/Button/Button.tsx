@@ -2,40 +2,16 @@ import React, { MouseEventHandler } from 'react'
 import { Link } from 'react-router-dom'
 
 
-
-
-// type Props = {
-//   onClick: MouseEventHandler,
-//   children: string,
-//   type: string ,
-//   className: string ,
-//   href:string ,
-//   variant: string,
-//   external: boolean ,
-  
-// }
-
-
 export const Buttons: React.FC<{ children: any, tipe: string , variant: string , class : string,
    clickHandler: MouseEventHandler, links : string, eksternal ?:  boolean | string}> = ( props ) =>   {
     const classButton = ['btn'];
     console.log(classButton);
 
-    if (props.variant !== 'primary') {
-      // classButton.push(`btn--${props.variant}`);
-    }
-  
-    if (props.class !== '') {
-    // classButton.push(props.class);
-    }
-    
+
     if (props.eksternal) {
-      // classButton.push('btn--link');
-      
       return (
         <a
-          href={props.links}
-          // className={classButton.join(' ')}
+          href={props.links}   
           {...props}
         >
           {props.children}
@@ -44,25 +20,18 @@ export const Buttons: React.FC<{ children: any, tipe: string , variant: string ,
     }
 
     if (props.links) {
-      // classButton.push('btn--link');
-      
-      
-      return (
-        
+      return ( 
         <Link
-          to={props.links}
-          // className={classButton.join(' ')}
+          to={props.links} 
           {...props}
         >
           {props.children}
-        </Link>
-        
+        </Link>   
       )
     }
   
     return (
       <button
-        // type={props.tipe}
       onClick={props.clickHandler}
       {...props}
       >
